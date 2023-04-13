@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Province;
+use App\Models\Courier;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,6 +35,10 @@ class HomeController extends Controller
     }
 
     
+    public function store(Request $request){
+        dd($request->all());
+    }
+
     public function getCourier(){
         return Courier::all();
     }
