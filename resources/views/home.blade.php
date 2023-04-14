@@ -89,8 +89,9 @@
                             <h5 class="text-muted">Tujuan Pengirim:</h5>
                             <div class="form-group">
                                 <label for="">Kota/Kabupaten</label>
-                                <select name="destination" id="" class="form-control">
-                                    <option value="#">-</option>
+                                <select name="#destination" id="" class="form-control">
+                                    <option value="">-</option>
+                                    
                                 </select>
                             </div>
                         </div>
@@ -98,7 +99,7 @@
                             <h5 class="text-muted">Pilih Expedisi:</h5>
                             @foreach  ($courier as $item => $value)
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="{{ $key }}" name="courier[]" value="{{ $value }}">
+                                <input class="form-check-input" type="checkbox" id="{{ $key }}" name="courier[]" value="{{ $value->code }}">
                                 <label class="form-check-label" for="{{ $key }}">{{ $value->title }}</label>
                             </div>
                             @endforeach

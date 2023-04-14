@@ -19,3 +19,24 @@ $(document).ready(function () {
         }
     });
 });
+
+$('#destination').select2({
+    ajax: {
+        url: 'api/cities',
+        type: 'POST',
+        dataType: 'json',
+        delay: 100,
+        data: function (params) {
+            return {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                search: $.trim(parans.term)
+            }
+        },
+        processResults: function (response) {
+            return {
+                results: response
+            }
+        },
+        cache: true
+    }
+})
